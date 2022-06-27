@@ -9,7 +9,7 @@ $ conda activate bibutils
 ```
 
 ### Pretty Printing 
-Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library). Contact [Jakob](https://jakobtroidl.github.io/) for access. This command writes a pretty print of the .bib file into `mytextfile.txt`
+Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library). Contact [Jakob](https://jakobtroidl.github.io/) for access. This command writes a pretty print of  `<mybibfile.bib>` into `<mytextfile.txt>`
 
 ```shell
 pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
