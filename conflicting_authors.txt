@@ -7,12 +7,14 @@ Broichhagen, Johannes
 Cai, Yuanhao
 Cali, Corrado
 Cenameri, Alban
+Chen, Yu-An
 Danzl, Johann G.
 Franzmeyer, Tim
 Grant, Seth G. N.
 Gröller, Eduard
 Gu, Jinjin
 Hadwiger, Markus
+Hoffer, John
 Jahr, Wiebke
 Jonas, Peter
 Kaufman, Arie
@@ -21,18 +23,25 @@ Kreiman, Gabriel
 Krueger, Robert
 Lekschas, Fritz
 Lichtman, Jeff W
+Lin, Jia-Ren
 Lin, Jing
 Lin, Zudi
+Liu, Shixia
 Madan, Spandan
 Magid, Salma Abdel
 Matejek, Brian
 Michalska, Julia M.
 Miguel, Eder
+Mitchell, Richard
+Muhlich, Jeremy L
 Nobre, Carolina
 Novarino, Gaia
 Palágyi, Kálmán
+Rashid, Rumana
 Rush, Alexander M.
+Santagata, Sandro
 Sommer, Christoph
+Sorger, Peter K
 Strobelt, Hendrik
 Timofte, Radu
 Troidl, Jakob
@@ -40,14 +49,21 @@ Van Gool, Luc
 Velicky, Philipp
 Wang, Haoqian
 Wang, Xueying
+Wang, Zhongyuan
 Watson, Jake F.
 Wei, Donglai
+Xia, Jiazhi
 Xia, Wenyu
+Xiao, Lanxi
 Xu, Shuang
+Yang, Weikai
 Yang, Yalong
+Ye, Xi
 You, Li
 Zhang, Jiangshe
 Zhang, Mengmi
+Zhang, Xingxing
 Zhang, Yulun
 Zhao, Jinglin
 Zhao, Zixiang
+Zhu, Jun
