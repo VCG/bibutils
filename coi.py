@@ -1,5 +1,4 @@
 import argparse
-import bibtexparser
 from bibtexparser.bparser import BibTexParser
 
 parser = argparse.ArgumentParser(description='Extract conflict of interest for a given author')
@@ -37,6 +36,8 @@ if __name__ == '__main__':
     conflicting_authors = list(set(conflicting_authors))
     # remove self from list
     conflicting_authors.remove(last_name + ', ' + first_name)
+    # sort list alphabetically
+    conflicting_authors.sort()
 
     # print list of conflicting authors
     print('Conflicting authors:')
@@ -45,7 +46,7 @@ if __name__ == '__main__':
 
     # write list of conflicting authors to file
     with open('conflicting_authors.txt', 'w') as f:
-        f.write('Conflict of interest for {}\n'.format(first_name + ' ' + last_name) + ' from {} to {}\n'.format(args.sy, args.ey))
+        f.write('Conflict of interest for {}'.format(first_name + ' ' + last_name) + ' from {} to {}:\n'.format(args.sy, args.ey))
         for author in conflicting_authors:
             f.write(author + '\n')
 
