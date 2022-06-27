@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Extract conflict of interest for a
 parser.add_argument('--first', type=str, help='Author first name')
 parser.add_argument('--last', type=str, help='Author last name')
 parser.add_argument('--i', type=str, help='Path to the bibtex file')
-parser.add_argument('--sy', type=int, help='Start year to consider conflict of interest')
+parser.add_argument('--sy', type=int, default=date.today().year - 5, help='Start year to consider conflict of interest')
 parser.add_argument('--ey', type=int, default=date.today().year, help='End year to consider conflict of interest')
 
 args, _ = parser.parse_known_args()
