@@ -16,13 +16,12 @@ pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 ```
 
 ### Conflicts of Interests
-Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022. This script writes the list of conflicting authors to `conflicting_authors.txt` in the same directory. 
+Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022. This script downloads content of the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library) and writes the list of conflicting authors to `conflicting_authors.txt` in the same directory. 
 
 ``` shell
 python coi.py
     --first Hanspeter // first name of author
     --last Pfister // last name of author
-    --i papers.bib // input bib file with references to consider
     --sy 2010 // start year of conflict of interests. Default is 5 years back from current year. 
     --ey 2022 // end year of conflict of interests. Default is current year. 
 ```
