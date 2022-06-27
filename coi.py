@@ -1,5 +1,7 @@
 import argparse
 from datetime import date
+from pathlib import Path
+
 from bibtexparser.bparser import BibTexParser
 import urllib.request
 
@@ -15,6 +17,7 @@ if __name__ == '__main__':
     file_name = 'papers.bib'
     first_name = args.first
     last_name = args.last
+    out_path = 'data/' + first_name + '_' + last_name + '/'
     url = 'https://www.zootle.me/bib?groupID=4672801&privateKey=auSCtFH3Dy7Tz32KhwuLNtg1'
 
     print('Extracting conflict of interest for {}'.format(first_name + ' ' + last_name))
@@ -46,10 +49,14 @@ if __name__ == '__main__':
     # sort list alphabetically
     conflicting_authors.sort()
 
+    Path(out_path).mkdir(parents=True, exist_ok=True)
     # write list of conflicting authors to file
-    with open('conflicting_authors.txt', 'w') as f:
-        f.write('Conflict of interest for {}'.format(first_name + ' ' + last_name) + ' from {} to {}:\n'.format(args.sy,                                                                                              args.ey))
+    with open(out_path + 'conflict_of_interest.txt', 'w') as f:
+        f.write('Conflict of interest for {}'.format(first_name + ' ' + last_name) + ' from {} to {}:\n'.format(args.sy,args.ey))
+        # add last update
+        f.write('Last updated: ' + date.today().strftime('%Y-%m-%d') + '\n')
+
         for author in conflicting_authors:
             f.write(author + '\n')
 
-    print('Results written to conflicting_authors.txt')
+    print('Results written to {}'.format(out_path + 'conflict_of_interest.txt'))
