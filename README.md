@@ -1,12 +1,14 @@
 # bibutils
 Utility functions &amp; instructions for working with VCG Zotero
 
+### Setup
 Setup and activate the conda environment:
 ```shell
 $ conda env create -f environment.yml
 $ conda activate bibutils
 ```
 
+### Pretty Printing 
 Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library).
 Convert to lib style of your choice.
 
@@ -14,7 +16,7 @@ Convert to lib style of your choice.
 pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 ```
 
-### Compiling conflict of interests
+### Conflicts of Interests
 Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022.
 
 ``` shell
