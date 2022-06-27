@@ -17,7 +17,7 @@ pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 ```
 
 ### Conflicts of Interests
-Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022.
+Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022. This script writes the list of conflicting authors to `conflicting_authors.txt` in the same directory. 
 
 ``` shell
 python coi.py
