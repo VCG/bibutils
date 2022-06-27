@@ -11,7 +11,7 @@ Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/
 Convert to lib style of your choice.
 
 ```shell
-pybtex-format --style plain <mybibfile.bib> <mytextfile.txt>
+pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 ```
 
 ### Compiling conflict of interests
