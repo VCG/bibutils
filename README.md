@@ -17,7 +17,7 @@ pybtex-format --style plain <mybibfile.bib> <mytextfile.txt>
 ### Compiling conflict of interests
 Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022.
 
-``` python
+``` shell
 python coi.py
     --first Hanspeter // first name of author
     --last Pfister // last name of author
