@@ -7,7 +7,7 @@ $ conda env create -f environment.yml
 $ conda activate bibutils
 ```
 
-Download references as bibtex file from the VCG zotero.
+Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library).
 Convert to lib style of your choice.
 
 ```shell
