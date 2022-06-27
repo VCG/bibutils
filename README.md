@@ -23,6 +23,6 @@ python coi.py
     --first Hanspeter // first name of author
     --last Pfister // last name of author
     --i papers.bib // input bib file with references to consider
-    --sy 2010 // start year of conflict of interests
-    --ey 2022 // end year of conflict of interests
+    --sy 2010 // start year of conflict of interests. Default is 5 years back from current year. 
+    --ey 2022 // end year of conflict of interests. Default is current year. 
 ```
