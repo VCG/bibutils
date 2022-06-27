@@ -1,9 +1,11 @@
 Conflict of interest for Hanspeter Pfister from 2017 to 2022:
 Last updated: 2022-06-27
+Arganda-Carreras, Ignacio
 Ben-Simon, Yoav
 Beyer, Johanna
 Bickel, Bernd
 Boorboor, Saeed
+Boyden, Edward S.
 Broichhagen, Johannes
 Cai, Yuanhao
 Cali, Corrado
@@ -16,12 +18,14 @@ Gröller, Eduard
 Gu, Jinjin
 Hadwiger, Markus
 Hoffer, John
+Huang, Siyu
 Jahr, Wiebke
 Jonas, Peter
 Kaufman, Arie
 Kinley, Jambay
 Kreiman, Gabriel
 Krueger, Robert
+Lauenburg, Leander
 Lekschas, Fritz
 Lichtman, Jeff W
 Lin, Jia-Ren
@@ -41,6 +45,7 @@ Palágyi, Kálmán
 Rashid, Rumana
 Rush, Alexander M.
 Santagata, Sandro
+Santos, Márcia dos
 Sommer, Christoph
 Sorger, Peter K
 Strobelt, Hendrik
@@ -63,6 +68,7 @@ Ye, Xi
 You, Li
 Zhang, Jiangshe
 Zhang, Mengmi
+Zhang, Ruihan
 Zhang, Xingxing
 Zhang, Yulun
 Zhao, Jinglin
