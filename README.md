@@ -24,4 +24,4 @@ Here is a simple example of how to compile conflicts of interest for Hanspeter. 
 https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022
 ```
 
-For making changes to the script, edit [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py) and push to the `main` branch to make the changes publicly accessible through the above link. 
+For making changes to the script, edit [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py), and push to the `main` branch to make them publicly accessible through the [link](https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022). 
