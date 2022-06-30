@@ -41,7 +41,7 @@ def parse(first, last, start, end):
     print('Creating csv file...')
     name = tempfile.gettempdir() + '/' + first + '_' + last + 'conflicts_of_interest.csv'
     with open(name, 'w') as f:
-        f.write('# Conflicting authors of interest for ' + first + ' ' + last + ' from ' + start + ' to ' + end + '\n')
+        f.write('# Conflicting authors for ' + first + ' ' + last + ' from ' + str(start) + ' to ' + str(end) + '\n')
         f.write('last, first, middle\n')
         f.write('\n')
         for author in conflicting_authors:
