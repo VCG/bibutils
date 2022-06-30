@@ -39,13 +39,14 @@ def parse(first, last, start, end):
 
     # create csv file with conflicting authors
     print('Creating csv file...')
-    with open(tempfile.gettempdir() + '/conflict_of_interest.csv', 'w') as f:
+    name = tempfile.gettempdir() + '/conflict_of_interest.csv'
+    with open(name, 'w') as f:
         for author in conflicting_authors:
             f.write(author + '\n')
     print('Done.')
 
     # return file as response
-    return send_file('conflict_of_interest.csv', as_attachment=True)
+    return send_file(name, as_attachment=True)
 
     # authors = "Conflicting authors for {} {} between {} and {}. ".format(first, last, start, end)
     # for author in conflicting_authors:
