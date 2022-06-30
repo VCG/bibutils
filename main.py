@@ -69,4 +69,3 @@ def compile_conflict_of_interest(request):
         return f'Please specify a first and last name'
 
 
-
