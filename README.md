@@ -2,7 +2,9 @@
 Biblography utility functions for the VCG
 
 ### Setup
-Setup and activate the conda environment:
+1. If you want to makes changes to bibutils functionality, request access to the Google Cloud Project from [Jakob Troidl](jakobtroidl.github.io).
+
+2. Setup and activate the conda environment:
 ```shell
 $ conda env create -f environment.yml
 $ conda activate bibutils
