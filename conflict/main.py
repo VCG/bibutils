@@ -2,6 +2,7 @@ from bibtexparser.bparser import BibTexParser
 import urllib.request
 from datetime import date
 from flask import Flask, request, send_file
+import tempfile
 
 
 def parse(first, last, start, end):
@@ -38,7 +39,7 @@ def parse(first, last, start, end):
 
     # create csv file with conflicting authors
     print('Creating csv file...')
-    with open('tmp/conflict_of_interest.csv', 'w') as f:
+    with open(tempfile.gettempdir() + '/conflict_of_interest.csv', 'w') as f:
         for author in conflicting_authors:
             f.write(author + '\n')
     print('Done.')
