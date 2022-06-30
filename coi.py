@@ -1,34 +1,20 @@
-import argparse
-from datetime import date
-from pathlib import Path
-
 from bibtexparser.bparser import BibTexParser
 import urllib.request
+from datetime import date
 
-parser = argparse.ArgumentParser(description='Extract conflict of interest for a given author')
-parser.add_argument('--first', type=str, help='Author first name')
-parser.add_argument('--last', type=str, help='Author last name')
-parser.add_argument('--sy', type=int, default=date.today().year - 5, help='Start year to consider conflict of interest')
-parser.add_argument('--ey', type=int, default=date.today().year, help='End year to consider conflict of interest')
 
-args, _ = parser.parse_known_args()
+def parse(first, last, start, end):
+    url = 'https://vcg.seas.harvard.edu/publications.bib'
 
-if __name__ == '__main__':
-    file_name = 'papers.bib'
-    first_name = args.first
-    last_name = args.last
-    out_path = 'data/' + first_name + '_' + last_name + '/'
-    url = 'https://www.zootle.me/bib?groupID=4672801&privateKey=auSCtFH3Dy7Tz32KhwuLNtg1'
-
-    print('Extracting conflict of interest for {}'.format(first_name + ' ' + last_name))
+    print('Extracting conflict of interest for {}'.format(first + ' ' + last))
 
     # Download bibtex file
     print('Downloading bibtex file...')
-    urllib.request.urlretrieve(url, file_name)
+    data = urllib.request.urlopen(url)
     print('Done.')
 
-    with open(file_name) as bibtex_file:
-        bibtex_str = bibtex_file.read()
+    # read bibtex string from url
+    bibtex_str = data.read().decode('utf-8')
 
     bp = BibTexParser(interpolate_strings=False)
     bib_db = bp.parse(bibtex_str)
@@ -36,8 +22,8 @@ if __name__ == '__main__':
     conflicting_authors = []
     for entry in bib_db.entries:
         authors = entry['author'].split(' and ')
-        if last_name + ', ' + first_name in authors:  # conflict of interest
-            if args.sy <= int(entry['year']) <= args.ey:
+        if last + ', ' + first in authors:  # conflict of interest
+            if start <= int(entry['year']) <= end:
                 conflicting_authors = conflicting_authors + authors
         else:  # not conflict of interest
             pass
@@ -45,18 +31,42 @@ if __name__ == '__main__':
     # remove duplicates from string list
     conflicting_authors = list(set(conflicting_authors))
     # remove self from list
-    conflicting_authors.remove(last_name + ', ' + first_name)
+    conflicting_authors.remove(last + ', ' + first)
     # sort list alphabetically
     conflicting_authors.sort()
 
-    Path(out_path).mkdir(parents=True, exist_ok=True)
-    # write list of conflicting authors to file
-    with open(out_path + 'conflict_of_interest.txt', 'w') as f:
-        f.write('Conflict of interest for {}'.format(first_name + ' ' + last_name) + ' from {} to {}:\n'.format(args.sy,args.ey))
-        # add last update
-        f.write('Last updated: ' + date.today().strftime('%Y-%m-%d') + '\n')
+    # print all conflicting authors
+    print()
+    authors = "Conflicting authors for {} {} between {} and {}. ".format(first, last, start, end)
+    for author in conflicting_authors:
+        authors += author + '; \n'
+    return authors
 
-        for author in conflicting_authors:
-            f.write(author + '\n')
 
-    print('Results written to {}'.format(out_path + 'conflict_of_interest.txt'))
+def compile_conflict_of_interest(request):
+    """Responds to any HTTP request.
+    Args:
+        request (flask.Request): HTTP request object.
+    Returns:
+        The response text or any set of values that can be turned into a
+        Response object using
+        `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
+    """
+
+    current_year = date.today().year
+
+    if request.method == 'GET' and 'first' in request.args and 'last' in request.args:
+        first = request.args.get('first')
+        last = request.args.get('last')
+        if 'from' in request.args and 'to' in request.args:
+            start = int(request.args.get('from'))
+            end = int(request.args.get('to'))
+            return parse(first, last, start, end)
+        else:
+            return parse(first, last, current_year - 5, current_year)
+
+    else:
+        return f'Please specify a first and last name'
+
+
+
