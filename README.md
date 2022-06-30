@@ -1,5 +1,5 @@
 # bibutils
-Utility functions &amp; instructions for working with VCG Zotero
+Biblography utility functions for the VCG
 
 ### Setup
 Setup and activate the conda environment:
@@ -9,19 +9,17 @@ $ conda activate bibutils
 ```
 
 ### Pretty Printing 
-Download references as bibtex file from the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library). Contact [Jakob](https://jakobtroidl.github.io/) for access. This command writes a pretty print of  `<mybibfile.bib>` into `<mytextfile.txt>`
+Download references as bibtex file from the VCG Website. This command returns a pretty print of the [downloaded bib file](https://vcg.seas.harvard.edu/publications.bib). 
 
 ```shell
 pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 ```
 
 ### Conflicts of Interests
-Here is a simple example of how to compile conflicts of interest for Hanspeter from 2010 to 2022. This script automatically downloads content of the [VCG Zotero](https://www.zotero.org/groups/4672801/vcg-papers/library) and writes the list of conflicting authors to `conflicting_authors.txt` in the same directory. 
+Here is a simple example of how to compile conflicts of interest for Hanspeter. The `conflict` folder is synced with a [Google Cloud Function](https://console.cloud.google.com/functions/details/us-east1/conflict_of_interest?env=gen1&project=jakob-troidl). [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py) automatically downloads content of the [VCG Website](https://vcg.seas.harvard.edu/publications.bib) and returns a list of conflicting authors. The function can be triggered using this link:
 
-``` shell
-python coi.py
-    --first Hanspeter // first name of author
-    --last Pfister // last name of author
-    --sy 2010 // start year of conflict of interests. Default is 5 years back from current year. 
-    --ey 2022 // end year of conflict of interests. Default is current year. 
 ```
+https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022
+```
+
+For making changes to the script, edit [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py).
