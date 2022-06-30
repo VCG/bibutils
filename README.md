@@ -19,7 +19,7 @@ pybtex-format --style plain --abbreviate-names <mybibfile.bib> <mytextfile.txt>
 Here is a simple example of how to compile conflicts of interest for Hanspeter. The `conflict` folder is synced with a [Google Cloud Function](https://console.cloud.google.com/functions/details/us-east1/conflict_of_interest?env=gen1&project=jakob-troidl). [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py) automatically downloads content of the [VCG Website](https://vcg.seas.harvard.edu/publications.bib) and returns a list of conflicting authors. The function can be triggered using this link:
 
 ```
-[https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022](https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022)
+https://us-east1-jakob-troidl.cloudfunctions.net/conflict_of_interest?first=Hanspeter&last=Pfister&from=2018&to=2022
 ```
 
 For making changes to the script, edit [`conflict/main.py`](https://github.com/VCG/bibutils/blob/main/conflict/main.py).
