@@ -36,11 +36,9 @@ def parse(first, last, start, end):
     # sort list alphabetically
     conflicting_authors.sort()
 
-    # print all conflicting authors
-
     # create csv file with conflicting authors
     print('Creating csv file...')
-    with open('conflict_of_interest.csv', 'w') as f:
+    with open('tmp/conflict_of_interest.csv', 'w') as f:
         for author in conflicting_authors:
             f.write(author + '\n')
     print('Done.')
